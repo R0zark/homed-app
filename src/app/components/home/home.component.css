@@ -1,0 +1,13 @@
+svg{
+    padding-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 90px;
+}
+.card-text{
+    text-align: center;
+}
+.container{
+    padding-top: 1rem;
+}
