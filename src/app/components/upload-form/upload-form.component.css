@@ -1,0 +1,67 @@
+
+.container{
+    margin-top: 1rem;
+}
+.file-custom{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20rem;
+    border: 2px dashed rgb(0, 102, 255);
+    display: block !important;
+    color: gray;
+    font-weight: bold;
+    text-decoration: solid;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color:white;
+    border-radius: 0.5rem;
+}
+.file-custom:hover{
+    cursor: pointer;
+    background-color: #9ecbec !important;
+    opacity: 0.8;
+}
+input[type="file"] {
+    display: none;
+}
+.submit{
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.files-list {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px auto;
+    background: #ffffff;
+    padding: 5px;
+}
+.files-list:hover{
+    background-color: rgba(92, 92, 92, 0.13);
+    border-radius: 0.5rem;
+    
+}
+
+.files-list .delete-file {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.files-list .delete-file img {
+    width: 30px;
+}
+.progress{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
