@@ -1,24 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import {DFile} from '../../models/file';
+import {fileService} from '../../services/fileService.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers:[
+    fileService
+  ]
 })
 export class HomeComponent implements OnInit {
   filesArray : Array<DFile>;
-  constructor() {
+  constructor(
+    private _fileService: fileService) {
+    
     this.filesArray = []
    }
   ngOnInit(): void {
-    for (let index = 0; index < 5 ; index++) {
-      this.filesArray.push(new DFile("Fichero " + index,"txt",2000,true));
-    }
-    this.filesArray.push(new DFile("Fichero doc","doc",2000,true))
-    this.filesArray.push(new DFile("Fichero docx","docx",2000,true))
-    this.filesArray.push(new DFile("Fichero zip","zip",2000,true))
-    this.filesArray.push(new DFile("Fichero js","js",2000,true))
-    this.filesArray.push(new DFile("Fichero rar","rar",2000,true))
-    //console.log(this.filesArray[0].name)
+    this.loadfiles();
+  }
+  loadfiles(){
+    this._fileService.getFiles().subscribe(
+      result =>{
+        for (let element in result) {
+          this.filesArray.push(new DFile(
+            result[element].name,result[element].extension,result[element].capacity,true))
+          }
+    },
+    error =>{
+      console.log(error)
+    })
   }
 }

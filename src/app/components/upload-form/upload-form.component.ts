@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { UploadfileService } from '../../services/uploadfile.service';
+import { fileService } from '../../services/fileService.service';
 import { HttpEventType } from '@angular/common/http';
 @Component({
   selector: 'app-upload-form',
   templateUrl: './upload-form.component.html',
   styleUrls: ['./upload-form.component.css'],
-  providers: [
-    UploadfileService
-  ]
+
 })
 
 export class UploadFormComponent implements OnInit {
   public uploading: boolean = false;
   public uploadProgress:number;
   constructor(
-    private _uploadService: UploadfileService,
+    private _fileService: fileService,
   ) { }
   files: Array<File> = [];
   onSubmit() {
-    this._uploadService.uploadFile(this.files).subscribe(
+    this._fileService.uploadFile(this.files).subscribe(
       event => {
         this.uploading = true;
         if (event.type === HttpEventType.UploadProgress) {

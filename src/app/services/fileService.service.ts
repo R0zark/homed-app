@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UploadfileService {
+export class fileService {
 
-  uploadurl = 'http://localhost:8000/upload'
+  url = 'http://localhost:8000/'
   constructor(
     private HttpClient: HttpClient
   ) { }
@@ -16,11 +16,15 @@ export class UploadfileService {
     for(let element in formData){
       form.append('file',formData[element],formData[element].name);
     }
-    return this.HttpClient.post<any>(this.uploadurl, form, {
+    return this.HttpClient.post<any>(this.url+'upload', form, {
       reportProgress: true,
       observe: 'events'
     })
 
+  }
+
+  getFiles():Observable<any>{
+    return this.HttpClient.get<any>(this.url+'files')
   }
 
 }
