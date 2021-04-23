@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 })
 export class fileService {
 
-  url = 'http://localhost:8000/'
+  url = 'http://192.168.1.132:8000/'
   constructor(
     private HttpClient: HttpClient
   ) { }

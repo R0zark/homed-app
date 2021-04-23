@@ -7,13 +7,16 @@ import { HomeComponent } from './components/home/home.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { DragDropDirective } from './components/upload-form/drag-drop.directive';
 import { HttpClientModule } from '@angular/common/http';
+import {WinmenuComponent} from './components/menu/winmenu/winmenu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    WinmenuComponent,
     UploadFormComponent,
-    DragDropDirective
+    DragDropDirective,
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,60 @@
+.btn-danger{
+    padding: 0;
+    width:1rem;
+    height:1rem;
+    background-color: rgb(150, 46, 35);
+    border-color: rgb(150, 46, 35) ;
+}
+.btn-danger:hover{
+    background-color: rgb(255, 25, 0);
+    border-color: rgb(150, 46, 35) ;
+}
+.btn-danger svg{
+    margin: auto;
+    display: block;
+    width:1.5rem;
+    height:1.5rem;
+}
+.btn-dark svg{
+    color: white;
+    margin: auto;
+    display: block;
+    width:1rem;
+    height:1rem;
+}
+.min svg{
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+.btn{
+    border-color: black;
+    background-color: black !important;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0;
+}
+.btn:hover{
+    border-color: rgb(22, 22, 22);
+    background-color: rgb(22, 22, 22) !important;
+
+}
+.close svg{
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+.close:hover{
+    background-color: rgb(255, 25, 0)!important;
+    border-color: rgb(255, 25, 0) !important; 
+}
+.buttons{
+	float: right;
+	display: block;
+	margin-left: auto;
+    -webkit-app-region: no-drag;
+}
+.navbar{
+    padding: 0%;
+    background-color: black !important;
+    -webkit-app-region: drag;
+}

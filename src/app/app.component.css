@@ -1,3 +1,10 @@
 #title{
     text-align: center;
 }
+.navbar{
+   /*  padding: 0%; */
+}
+
+.navbar-toggler{
+   /*  margin-bottom: 0.5rem; */
+}
