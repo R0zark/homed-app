@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {DFile} from '../../models/file';
 import {fileService} from '../../services/fileService.service'
 @Component({
@@ -10,6 +10,11 @@ import {fileService} from '../../services/fileService.service'
   ]
 })
 export class HomeComponent implements OnInit {
+
+
+  @Input()
+  fileId;
+
   filesArray : Array<DFile>;
   constructor(
     private _fileService: fileService) {
@@ -23,12 +28,15 @@ export class HomeComponent implements OnInit {
     this._fileService.getFiles().subscribe(
       result =>{
         for (let element in result) {
-          this.filesArray.push(new DFile(
+          this.filesArray.push(new DFile(result[element].id,
             result[element].name,result[element].extension,result[element].capacity,true))
           }
     },
     error =>{
-      console.log(error)
+     alert(error)
     })
+  }
+  deleteFile(id:number){
+    this.filesArray = this.filesArray.filter(file => file.id != id)
   }
 }

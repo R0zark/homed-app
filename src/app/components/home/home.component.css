@@ -11,3 +11,8 @@ svg{
 .container{
     padding-top: 1rem;
 }
+.trash-button svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+}

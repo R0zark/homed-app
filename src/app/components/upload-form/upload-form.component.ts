@@ -21,10 +21,8 @@ export class UploadFormComponent implements OnInit {
         this.uploading = true;
         if (event.type === HttpEventType.UploadProgress) {
           this.uploadProgress = Math.round((event.loaded / event.total * 100))
-          console.log("Upload Progress: " + this.uploadProgress)
         }
         else if (event.type === HttpEventType.Response) {
-          console.log(event)
           this.uploading = false;
         }
       }
